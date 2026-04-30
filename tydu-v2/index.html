@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ty Du — Villa d'exception · Île-Tudy, Bretagne · Bord de mer</title>
+<meta name="description" content="Ty Du, villa contemporaine d'exception à Île-Tudy (Finistère), à moins de 100m de la plage du Sillon. Cuisine Bulthaup, électroménager Miele, terrasses privées, 3 chambres, 6 personnes.">
+<meta name="keywords" content="location villa Île-Tudy, maison haut de gamme Bretagne, villa bord de mer Finistère, location luxe Pays Bigouden, Ty Du">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.tydu.fr/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tydu.fr/">
+<meta property="og:title" content="Ty Du — Villa d'exception à Île-Tudy, Bretagne">
+<meta property="og:description" content="Demeure d'exception à moins de 100m de la plage du Sillon. Séjour sur-mesure, expérience unique · Cuisine Bulthaup · 3 chambres · 6 personnes.">
+<meta property="og:image" content="https://www.tydu.fr/ext-terrasse-principale.jpeg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ty Du — Villa d'exception à Île-Tudy">
+<meta name="twitter:image" content="https://www.tydu.fr/ext-terrasse-principale.jpeg">
+<link rel="preload" as="image" href="ext-terrasse-principale.jpeg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Ty Du","description":"Villa d'exception à Île-Tudy, à moins de 100 mètres de la plage du Sillon.","url":"https://www.tydu.fr","image":"https://www.tydu.fr/ext-terrasse-principale.jpeg","address":{"@type":"PostalAddress","streetAddress":"3 Bis rue des Pins","addressLocality":"Île-Tudy","postalCode":"29980","addressRegion":"Finistère","addressCountry":"FR"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Cuisine Bulthaup","value":true},{"@type":"LocationFeatureSpecification","name":"Plage à 100m","value":true},{"@type":"LocationFeatureSpecification","name":"Terrasse privée","value":true}],"numberOfRooms":3,"occupancy":{"@type":"QuantitativeValue","maxValue":6}}
+
+  // AVIS CAROUSEL
+  let avisIdx = 0;
+  const avisTrack = document.getElementById('avisTrack');
+  const avisDots = document.querySelectorAll('.avis-dot');
+
+  function getVisibleCards() {
+    return window.innerWidth <= 900 ? 1 : 3;
+  }
+
+  function avisGo(idx) {
+    const cards = document.querySelectorAll('.avis-card');
+    const visible = getVisibleCards();
+    const maxIdx = cards.length - visible;
+    avisIdx = Math.max(0, Math.min(idx, maxIdx));
+    const cardW = cards[0].offsetWidth + 24;
+    avisTrack.style.transform = `translateX(-${avisIdx * cardW}px)`;
+    avisDots.forEach((d,i) => d.classList.toggle('active', i === avisIdx));
+  }
+
+  function avisNav(dir) {
+    avisGo(avisIdx + dir);
+  }
+
+  // Auto-advance every 6s
+  setInterval(() => {
+    const cards = document.querySelectorAll('.avis-card');
+    const visible = getVisibleCards();
+    const maxIdx = cards.length - visible;
+    avisGo(avisIdx >= maxIdx ? 0 : avisIdx + 1);
+  }, 6000);
+
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noir: #0e0e0e;
+    --charbon: #1a1a1a;
+    --gris-fonce: #2d2d2d;
+    --gris-moyen: #5a5a5a;
+    --gris-clair: #b8b8b8;
+    --creme: #f5f2ed;
+    --blanc: #fafafa;
+    --or: #c9a84c;
+    --rouge-fermob: #c0392b;
+    --bleu-ciel: #87CEEB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--noir);
+    color: var(--blanc);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(14,14,14,0.85) 0%, transparent 100%);
+    transition: background 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(14,14,14,0.97);
+    padding: 16px 48px;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: var(--blanc);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-logo span { color: var(--or); }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--gris-clair);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--or); }
+  .btn-reserver {
+    background: var(--or);
+    color: var(--noir) !important;
+    padding: 12px 28px;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .btn-reserver:hover {
+    background: #e0bc5a !important;
+    transform: translateY(-1px);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+  }
+  .hero-slide.active { opacity: 1; }
+  .hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(14,14,14,0.85) 0%,
+      rgba(14,14,14,0.3) 50%,
+      rgba(14,14,14,0.1) 100%
+    );
+  }
+
+  /* Photo backgrounds using CSS data-uri trick — we'll use color placeholders with texture */
+  .slide-1 { background-color: #1c1c1c; background-image: radial-gradient(ellipse at 30% 60%, #2a2a2a 0%, #0e0e0e 70%); }
+  .slide-2 { background-color: #1a2020; background-image: radial-gradient(ellipse at 70% 40%, #252d2d 0%, #0e0e0e 70%); }
+  .slide-3 { background-color: #201a1a; background-image: radial-gradient(ellipse at 50% 50%, #2d2020 0%, #0e0e0e 70%); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px 80px;
+    max-width: 900px;
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--or);
+  }
+  .hero-eyebrow span {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 300;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    margin-bottom: 28px;
+    animation: fadeUp 1s ease 0.5s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--or);
+  }
+  .hero-sub {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    font-weight: 200;
+    margin-bottom: 48px;
+    animation: fadeUp 1s ease 0.7s both;
+  }
+  .hero-sub span { margin: 0 12px; color: var(--or); }
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.9s both;
+  }
+  .btn-primary {
+    background: var(--or);
+    color: var(--noir);
+    padding: 16px 40px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #e0bc5a; transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--blanc);
+    padding: 16px 40px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--or); color: var(--or); }
+
+  /* Slide indicators */
+  .hero-indicators {
+    position: absolute;
+    bottom: 40px;
+    right: 48px;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+  }
+  .indicator {
+    width: 28px;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+  }
+  .indicator.active { background: var(--or); width: 48px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 120px 80px; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--or);
+    opacity: 0.5;
+  }
+
+  /* ── LA MAISON ── */
+  .la-maison {
+    background: var(--charbon);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .maison-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+  .maison-text h2 em { font-style: italic; color: var(--or); }
+  .maison-text p {
+    color: var(--gris-clair);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .maison-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--or);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris-moyen);
+    font-weight: 300;
+  }
+  .maison-visual {
+    position: relative;
+    height: 600px;
+  }
+  .maison-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .maison-img-accent {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 200px;
+    height: 260px;
+    object-fit: cover;
+    border: 6px solid var(--charbon);
+  }
+
+  /* Photo gallery placeholders */
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--gris-fonce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--gris-moyen);
+    text-transform: uppercase;
+  }
+
+  /* ── GALERIE ── */
+  .galerie {
+    background: var(--noir);
+    padding: 80px;
+  }
+  .galerie-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+  }
+  .galerie-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+  }
+  /* Galerie tabs */
+  .galerie-tabs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .gtab {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--gris-clair);
+    padding: 8px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .gtab:hover { border-color: var(--or); color: var(--or); }
+  .gtab.active { background: var(--or); border-color: var(--or); color: var(--noir); font-weight: 500; }
+
+  /* Galerie masonry grid */
+  .galerie-masonry {
+    columns: 4;
+    column-gap: 10px;
+  }
+  .gal-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    display: block;
+  }
+  .gal-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .gal-item:hover img { transform: scale(1.05); }
+  .gal-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14,14,14,0);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gal-item .overlay span {
+    color: var(--blanc);
+    font-size: 32px;
+    font-weight: 200;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .gal-item:hover .overlay { background: rgba(14,14,14,0.4); }
+  .gal-item:hover .overlay span { opacity: 1; transform: scale(1); }
+
+  /* photo blocks with CSS art of the house */
+  .photo-block {
+    position: relative;
+    overflow: hidden;
+  }
+  .pb-exterior-main {
+    background: linear-gradient(160deg, #87CEEB 0%, #6ab0d4 30%, #2d2d2d 30%, #1a1a1a 100%);
+  }
+  .pb-terrace {
+    background: linear-gradient(180deg, #87CEEB 0%, #6ab0d4 45%, #8a7a6a 45%, #6b5c4c 100%);
+  }
+  .pb-interior {
+    background: linear-gradient(to bottom, #e8e4de 0%, #d4cfc8 60%, #b8b0a5 100%);
+  }
+  .pb-kitchen {
+    background: linear-gradient(to bottom, #f0eeea 0%, #e0ddd8 50%, #c8c4be 100%);
+  }
+  .pb-garden {
+    background: linear-gradient(180deg, #87CEEB 0%, #6ab0d4 40%, #4a7a3a 40%, #3a6a2a 100%);
+  }
+
+  /* ── ÉQUIPEMENTS ── */
+  .equipements {
+    background: var(--charbon);
+  }
+  .equipements-header { margin-bottom: 64px; max-width: 600px; }
+  .equipements-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    margin-top: 12px;
+    line-height: 1.1;
+  }
+  .equip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .equip-card {
+    background: rgba(255,255,255,0.03);
+    padding: 40px 32px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .equip-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.04);
+  }
+  .equip-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1;
+  }
+  .equip-title {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--blanc);
+  }
+  .equip-desc {
+    font-size: 12px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── EXPERIENCES ── */
+  .experiences {
+    background: var(--noir);
+  }
+  .experiences h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 64px;
+  }
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .exp-card {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 32px;
+    transition: border-color 0.3s;
+  }
+  .exp-card:hover { border-color: var(--or); }
+  .exp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: rgba(201,168,76,0.2);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .exp-title {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: var(--blanc);
+  }
+  .exp-desc {
+    font-size: 13px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── LOCALISATION ── */
+  .localisation {
+    background: var(--charbon);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  .loc-content {
+    padding: 100px 80px;
+  }
+  .loc-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+  .loc-content p {
+    color: var(--gris-clair);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .loc-distances {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .loc-distances li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 13px;
+  }
+  .loc-distances li span:first-child {
+    color: var(--gris-clair);
+    font-weight: 300;
+  }
+  .loc-distances li span:last-child {
+    color: var(--or);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .loc-map {
+    background: #1a2020;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  /* CSS Map of Bretagne */
+  .loc-map::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 40% 60%, rgba(135,206,235,0.2) 0%, transparent 60%),
+      linear-gradient(135deg, #0d1f1f 0%, #152a2a 50%, #0d1f1f 100%);
+  }
+  .map-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .map-label .map-pin {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 16px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .map-label p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--blanc);
+  }
+  .map-label small {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 300;
+  }
+
+  /* ── RESERVATION ── */
+  .reservation {
+    background: var(--noir);
+    text-align: center;
+    padding: 140px 80px;
+  }
+  .reservation h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 300;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+  .reservation h2 em { font-style: italic; color: var(--or); }
+  .reservation p {
+    color: var(--gris-clair);
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 56px;
+    line-height: 1.8;
+  }
+  .resa-box {
+    max-width: 780px;
+    margin: 0 auto;
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 56px;
+    position: relative;
+  }
+  .resa-box::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 60px; right: 60px;
+    height: 1px;
+    background: var(--or);
+  }
+  .resa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+  .resa-field label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+  .resa-field input,
+  .resa-field select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    color: var(--blanc);
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 0;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .resa-field input:focus,
+  .resa-field select:focus { border-color: var(--or); }
+  .resa-field select option { background: var(--charbon); }
+  .resa-btn {
+    background: var(--or);
+    color: var(--noir);
+    border: none;
+    padding: 14px 32px;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .resa-btn:hover { background: #e0bc5a; transform: translateY(-2px); }
+  .resa-note {
+    margin-top: 24px;
+    font-size: 11px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .resa-note a { color: var(--gris-clair); text-decoration: none; transition: color 0.3s; }
+  .resa-note a:hover { color: var(--or); }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--charbon);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .contact-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 12px;
+    margin-bottom: 24px;
+  }
+  .contact-text p {
+    color: var(--gris-clair);
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .contact-details { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--gris-clair);
+    font-weight: 300;
+  }
+  .contact-item .ci-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 24px; }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-field label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 300;
+  }
+  .form-field input,
+  .form-field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    color: var(--blanc);
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 0;
+    outline: none;
+    resize: none;
+    transition: border-color 0.3s;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus { border-color: var(--or); }
+  .form-submit {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--or);
+    color: var(--or);
+    padding: 14px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  .form-submit:hover { background: var(--or); color: var(--noir); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--noir);
+    padding: 64px 80px 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--blanc);
+  }
+  .footer-logo span { color: var(--or); }
+  .footer-tagline {
+    font-size: 11px;
+    color: var(--gris-moyen);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-weight: 300;
+  }
+  .footer-nav {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    align-items: center;
+  }
+  .footer-nav a {
+    color: var(--gris-moyen);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+  .footer-nav a:hover { color: var(--or); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .footer-socials { display: flex; gap: 24px; }
+  .footer-socials a {
+    color: var(--gris-moyen);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+  .footer-socials a:hover { color: var(--or); }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.98);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-close {
+    position: absolute;
+    top: 28px; right: 40px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--gris-clair);
+    line-height: 1;
+    transition: color 0.3s;
+    z-index: 2;
+    background: none; border: none; font-family: inherit;
+  }
+  .lightbox-close:hover { color: var(--or); }
+  .lb-img-wrap {
+    max-width: 88vw;
+    max-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lb-img-wrap img {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    transition: opacity 0.15s ease;
+    display: block;
+  }
+  .lb-arrow {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--blanc);
+    font-size: 22px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+    z-index: 2;
+    font-family: inherit;
+  }
+  .lb-arrow:hover { border-color: var(--or); color: var(--or); }
+  .lb-prev { left: 32px; }
+  .lb-next { right: 32px; }
+  .lb-counter {
+    position: absolute;
+    bottom: 28px;
+    left: 50%; transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gris-moyen);
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── SEPARATOR ── */
+  .sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 48px 80px;
+    background: var(--noir);
+  }
+  .sep::before, .sep::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+  .sep-icon {
+    color: var(--or);
+    font-size: 18px;
+    opacity: 0.5;
+    letter-spacing: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section { padding: 80px 32px; }
+    nav { padding: 20px 32px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 32px 60px; }
+    .la-maison { grid-template-columns: 1fr; }
+    .maison-visual { height: 400px; }
+    .equip-grid { grid-template-columns: repeat(2, 1fr); }
+    .exp-grid { grid-template-columns: 1fr; }
+    .localisation { grid-template-columns: 1fr; }
+    .loc-map { min-height: 300px; }
+    .reservation { padding: 80px 32px; }
+    .resa-grid { grid-template-columns: 1fr 1fr; }
+    .resa-btn { grid-column: 1 / -1; }
+    .contact { grid-template-columns: 1fr; }
+    .galerie-masonry { columns: 2; }
+    .lb-arrow { display: none; }
+    footer { padding: 48px 32px 32px; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-nav { flex-wrap: wrap; gap: 24px; }
+  }
+
+  /* ── AVIS ── */
+  .avis {
+    background: var(--noir);
+    padding: 120px 80px;
+  }
+  .avis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+  }
+  .avis-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .avis-score-global {
+    text-align: right;
+  }
+  .avis-score-global .big-score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--or);
+    line-height: 1;
+    display: block;
+  }
+  .avis-score-global .score-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris-moyen);
+    font-weight: 300;
+  }
+  .avis-score-global .booking-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  .booking-dot {
+    width: 10px; height: 10px;
+    background: #003580;
+    border-radius: 50%;
+  }
+  .booking-name {
+    font-size: 11px;
+    color: var(--gris-moyen);
+    letter-spacing: 1px;
+  }
+  .avis-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  .avis-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  .avis-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 40px;
+    min-width: calc(33.333% - 16px);
+    flex-shrink: 0;
+    transition: border-color 0.3s;
+    position: relative;
+  }
+  .avis-card:hover {
+    border-color: rgba(201,168,76,0.25);
+  }
+  .avis-card::before {
+    content: 'C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    color: var(--or);
+    opacity: 0.2;
+    position: absolute;
+    top: 16px; left: 28px;
+    line-height: 1;
+  }
+  .avis-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .avis-note .note-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--or);
+    line-height: 1;
+  }
+  .avis-note .etoiles {
+    display: flex;
+    gap: 3px;
+  }
+  .avis-note .etoile {
+    width: 14px; height: 14px;
+    background: var(--or);
+    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  }
+  .avis-texte {
+    font-size: 14px;
+    color: var(--gris-clair);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 28px;
+    font-style: italic;
+    min-height: 80px;
+  }
+  .avis-auteur {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 20px;
+  }
+  .avis-nom {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--blanc);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .avis-pays {
+    font-size: 11px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    margin-top: 4px;
+  }
+  .avis-date {
+    font-size: 11px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: right;
+  }
+  .avis-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .avis-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--blanc);
+    width: 48px; height: 48px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .avis-btn:hover { border-color: var(--or); color: var(--or); }
+  .avis-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .avis-dot {
+    width: 6px; height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+  }
+  .avis-dot.active { background: var(--or); width: 24px; border-radius: 3px; }
+  .categories-bar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-bottom: 56px;
+    padding: 32px 40px;
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.12);
+  }
+  .cat-item { text-align: center; }
+  .cat-score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--or);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cat-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-moyen);
+    font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .avis { padding: 80px 32px; }
+    .avis-card { min-width: calc(100% - 0px); }
+    .avis-header { flex-direction: column; gap: 24px; align-items: flex-start; }
+    .avis-score-global { text-align: left; }
+    .avis-score-global .booking-badge { justify-content: flex-start; }
+    .categories-bar { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ── ENV BAND ── */
+  .env-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 80px;
+    gap: 0;
+  }
+  .env-item {
+    position: relative;
+    overflow: hidden;
+    height: 420px;
+    cursor: pointer;
+  }
+  .env-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+    filter: brightness(0.75);
+  }
+  .env-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.9);
+  }
+  .env-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 28px 32px;
+    background: linear-gradient(to top, rgba(14,14,14,0.85) 0%, transparent 100%);
+    transition: padding 0.3s;
+  }
+  .env-num {
+    display: block;
+    color: var(--or);
+    font-size: 18px;
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+  .env-caption p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--blanc);
+    margin-bottom: 4px;
+  }
+  .env-caption small {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .env-band { grid-template-columns: repeat(2, 1fr); }
+    .env-item { height: 260px; }
+  }
+
+  /* ── CHAMBRES ── */
+  .chambres {
+    background: var(--charbon);
+    padding: 120px 80px;
+  }
+  .chambres h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 64px;
+    margin-top: 12px;
+  }
+  .chambres-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .chambre-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .chambre-card:hover { border-color: rgba(201,168,76,0.25); }
+  .chambre-img {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+  }
+  .chambre-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.85);
+  }
+  .chambre-card:hover .chambre-img img {
+    transform: scale(1.04);
+    filter: brightness(0.95);
+  }
+  .chambre-num {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: rgba(201,168,76,0.5);
+    line-height: 1;
+  }
+  .chambre-info {
+    padding: 28px 28px 32px;
+  }
+  .chambre-titre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--blanc);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .chambre-desc {
+    font-size: 13px;
+    color: var(--gris-clair);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .chambre-details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .chambre-details li {
+    font-size: 12px;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  @media (max-width: 900px) {
+    .chambres { padding: 80px 32px; }
+    .chambres-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">TY <span>DU</span></a>
+  <ul class="nav-links">
+    <li><a href="#maison">La Villa</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#experiences">L'île</a></li>
+    <li><a href="#chambres">Chambres</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#reservation" class="btn-reserver">Séjour</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image: url('ext-terrasse-principale.jpeg'); background-size: cover; background-position: center 40%;"></div>
+    <div class="hero-slide" style="background-image: url('ext-terrasse-angle.jpeg'); background-size: cover; background-position: center 50%;"></div>
+    <div class="hero-slide" style="background-image: url('ext-facade-rue.jpeg'); background-size: cover; background-position: center 60%;"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span>Presqu'île d'Île-Tudy · Finistère</span></div>
+    <h1 class="hero-title">L'Océan,<br>à <em>cent mètres</em></h1>
+    <p class="hero-sub">Demeure d'exception<span>·</span>Séjour sur-mesure<span>·</span>Expérience unique</p>
+    <div class="hero-actions">
+      <a href="#reservation" class="btn-primary">Demander une disponibilité</a>
+      <a href="#maison" class="btn-secondary">Découvrir la villa</a>
+    </div>
+  </div>
+  <div class="hero-indicators">
+    <div class="indicator active" onclick="goSlide(0)"></div>
+    <div class="indicator" onclick="goSlide(1)"></div>
+    <div class="indicator" onclick="goSlide(2)"></div>
+  </div>
+</section>
+
+<!-- LA MAISON -->
+<section class="la-maison" id="maison">
+  <div class="maison-text reveal">
+    <div class="section-label">La Villa</div>
+    <h2>Une architecture <em>rare</em>, au bout de la presqu'île</h2>
+    <p>Ty Du — "la maison noire" en breton — est une villa contemporaine d'exception érigée sur la presqu'île d'Île-Tudy, à moins de cent mètres du rivage. Son bardage de bois brûlé noir, sa silhouette architecturale épurée et ses grandes baies vitrées ouvertes sur les pins centenaires en font une demeure à nulle autre pareille.</p>
+    <p>Conçue pour une expérience de séjour sans compromis, la villa déploie de vastes espaces de vie baignés de lumière, une cuisine Bulthaup entièrement équipée en électroménager Miele, et des terrasses privées où le souffle marin accompagne chaque instant. L'Atlantique, à portée de regard.</p>
+    <div class="maison-stats">
+      <div class="stat-item">
+        <span class="stat-number">100</span>
+        <span class="stat-label">m² habitables</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4</span>
+        <span class="stat-label">chambres</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10</span>
+        <span class="stat-label">voyageurs</span>
+      </div>
+    </div>
+  </div>
+  <div class="maison-visual reveal reveal-delay-2">
+    <img loading="lazy" src="ext-terrasse-principale.jpeg" alt="Ty Du — Terrasse" class="maison-img-main" style="border: none;">
+    <img loading="lazy" src="int-sejour-cheminee.jpeg" alt="Ty Du — Intérieur" class="maison-img-accent">
+  </div>
+</section>
+
+<div class="sep"><span class="sep-icon">✦ ✦ ✦</span></div>
+
+<!-- GALERIE -->
+<section class="galerie" id="galerie">
+  <div class="galerie-header reveal">
+    <div>
+      <div class="section-label">Galerie</div>
+      <h2>La villa en images</h2>
+    </div>
+    <div class="galerie-tabs reveal">
+      <button class="gtab active" onclick="filterGal('all',this)">Tout</button>
+      <button class="gtab" onclick="filterGal('ext',this)">Extérieurs</button>
+      <button class="gtab" onclick="filterGal('int',this)">Intérieurs</button>
+      <button class="gtab" onclick="filterGal('ch',this)">Chambres</button>
+    </div>
+  </div>
+  <div class="galerie-masonry" id="galMasonry">
+    <div class="gal-item" data-cat="ext" onclick="openLb(0)">
+      <img loading="lazy" src="ext-terrasse-principale.jpeg" alt="Terrasse principale">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(1)">
+      <img loading="lazy" src="ext-terrasse-angle.jpeg" alt="Terrasse angle">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(2)">
+      <img loading="lazy" src="ext-patio-chaises.jpeg" alt="Patio">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(3)">
+      <img loading="lazy" src="ext-terrasse-soir.jpeg" alt="Terrasse">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(4)">
+      <img loading="lazy" src="ext-terrasse-large.jpeg" alt="Terrasse vue large">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(5)">
+      <img loading="lazy" src="ext-jardin-vue.jpeg" alt="Jardin">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(6)">
+      <img loading="lazy" src="ext-jardin-pelouse.jpeg" alt="Jardin pelouse">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(7)">
+      <img loading="lazy" src="ext-vue-ensemble.jpeg" alt="Vue ensemble">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(8)">
+      <img loading="lazy" src="ext-module-noir.jpeg" alt="Architecture">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ext" onclick="openLb(9)">
+      <img loading="lazy" src="ext-facade-rue.jpeg" alt="Façade">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(10)">
+      <img loading="lazy" src="int-sejour-cheminee.jpeg" alt="Salle à manger poêle">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(11)">
+      <img loading="lazy" src="int-sejour-diner.jpeg" alt="Salle à manger">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(12)">
+      <img loading="lazy" src="int-salon-canapes.jpeg" alt="Salon">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(13)">
+      <img loading="lazy" src="int-sejour-large.jpeg" alt="Séjour">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(14)">
+      <img loading="lazy" src="int-sejour-open.jpeg" alt="Espace de vie">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(15)">
+      <img loading="lazy" src="int-cuisine-full.jpeg" alt="Cuisine Bulthaup">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(16)">
+      <img loading="lazy" src="int-cuisine-miele.jpeg" alt="Cuisine Miele">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(17)">
+      <img loading="lazy" src="int-cuisine-island.jpeg" alt="Ilot cuisine">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="int" onclick="openLb(18)">
+      <img loading="lazy" src="int-couloir.jpeg" alt="Couloir">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(19)">
+      <img loading="lazy" src="ch1-lit-fenetre.jpeg" alt="Chambre 1">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(20)">
+      <img loading="lazy" src="ch1-detail-serviettes.jpeg" alt="Chambre 1 détail">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(21)">
+      <img loading="lazy" src="ch2-lit-fenetre.jpeg" alt="Chambre 2">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(22)">
+      <img loading="lazy" src="ch2-entree-armoire.jpeg" alt="Chambre 2 entrée">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(23)">
+      <img loading="lazy" src="ch3-lit-ambiance.jpeg" alt="Chambre 3">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(24)">
+      <img loading="lazy" src="ch3-lit-fenetre.jpeg" alt="Chambre 3 fenêtre">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(25)">
+      <img loading="lazy" src="sdb-miroir-led.jpeg" alt="Salle de bain">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(26)">
+      <img loading="lazy" src="sdb-rangement.jpeg" alt="Salle de bain rangement">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(27)">
+      <img loading="lazy" src="ch2-couloir-sdb.jpeg" alt="Couloir vers salle de bain">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(28)">
+      <img loading="lazy" src="entree-dressing.jpeg" alt="Entrée dressing">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(29)">
+      <img loading="lazy" src="ch-principale-lit.jpeg" alt="Chambre principale">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(30)">
+      <img loading="lazy" src="sdb2-vasque.jpeg" alt="Salle de bain vasque">
+      <div class="overlay"><span>+</span></div>
+    </div>
+    <div class="gal-item" data-cat="ch" onclick="openLb(31)">
+      <img loading="lazy" src="sdb2-douche.jpeg" alt="Douche">
+      <div class="overlay"><span>+</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CHAMBRES -->
+<section class="chambres" id="chambres">
+  <div class="section-label reveal">Les Chambres</div>
+  <h2 class="reveal">3 chambres <em style="font-style:italic;color:var(--or)">raffinées</em></h2>
+  <div class="chambres-grid">
+
+    <div class="chambre-card reveal">
+      <div class="chambre-img">
+        <img loading="lazy" src="ch-principale-lit.jpeg" alt="Chambre principale — Lit double">
+        <div class="chambre-num">01</div>
+      </div>
+      <div class="chambre-info">
+        <p class="chambre-titre">Chambre Phare</p>
+        <p class="chambre-desc">Suite parentale avec lit en 180 cm, dressing haut de gamme sur-mesure, douche à effet pluie privative et WC indépendant. Un espace intime et raffiné.</p>
+        <ul class="chambre-details">
+          <li>🛏 Lit 180 cm</li>
+          <li>🚿 Douche privative</li>
+          <li>🚪 Dressing haut de gamme</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chambre-card reveal reveal-delay-1">
+      <div class="chambre-img">
+        <img loading="lazy" src="ch3-lit-ambiance.jpeg" alt="Chambre 2 — Ambiance">
+        <div class="chambre-num">02</div>
+      </div>
+      <div class="chambre-info">
+        <p class="chambre-titre">Chambre Atlantique</p>
+        <p class="chambre-desc">Chambre double avec lit en 160 cm, dressing intégré sur-mesure, ambiance lumineuse et soignée. Accès à la salle d'eau commune.</p>
+        <ul class="chambre-details">
+          <li>🛏 Lit 160 cm</li>
+          <li>🚪 Dressing intégré</li>
+          <li>🛁 Salle d'eau partagée</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chambre-card reveal reveal-delay-2">
+      <div class="chambre-img">
+        <img loading="lazy" src="sdb2-vasque.jpeg" alt="Salle de bain — Vasque">
+        <div class="chambre-num">SDB</div>
+      </div>
+      <div class="chambre-info">
+        <p class="chambre-titre">Chambre Surf</p>
+        <p class="chambre-desc">Chambre double avec lit en 160 cm, dressing intégré, vue sur le jardin. La villa dispose également d'une salle d'eau avec douche et d'un WC indépendant communs aux chambres 2 et 3.</p>
+        <ul class="chambre-details">
+          <li>🛏 Lit 160 cm</li>
+          <li>🚪 Dressing intégré</li>
+          <li>🚿 Salle d'eau + WC indépendant</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sep"><span class="sep-icon">✦ ✦ ✦</span></div>
+
+<!-- ÉQUIPEMENTS -->
+<section class="equipements" id="equipements">
+  <div class="equipements-header reveal">
+    <div class="section-label">Confort & Équipements</div>
+    <h2>Le raffinement absolu,<br>face à <em>l'Atlantique</em></h2>
+  </div>
+  <div class="equip-grid">
+    <div class="equip-card reveal">
+      <span class="equip-icon">🍳</span>
+      <p class="equip-title">Cuisine Bulthaup</p>
+      <p class="equip-desc">Cuisine sur-mesure Bulthaup, électroménager Miele, robot pâtissier, machine à café espresso & filtre, grille-pain SMEG</p>
+    </div>
+    <div class="equip-card reveal reveal-delay-1">
+      <span class="equip-icon">🔥</span>
+      <p class="equip-title">Poêle scandinave</p>
+      <p class="equip-desc">Poêle design au cœur du grand salon, bois de chauffage fourni — les soirées bretonnes prennent une autre dimension</p>
+    </div>
+    <div class="equip-card reveal reveal-delay-2">
+      <span class="equip-icon">🌿</span>
+      <p class="equip-title">Terrasses privées</p>
+      <p class="equip-desc">Deux terrasses en bois encloses de bardage noir, mobilier Fermob, barbecue Weber, jardinet — un sanctuaire face au vent du large</p>
+    </div>
+    <div class="equip-card reveal reveal-delay-3">
+      <span class="equip-icon">📺</span>
+      <p class="equip-title">Salon d'exception</p>
+      <p class="equip-desc">Grand salon lumineux, TV ultra-HD, Netflix, WiFi fibre, fauteuils Eames — chaque détail pensé pour le bien-être absolu</p>
+    </div>
+    <div class="equip-card reveal">
+      <span class="equip-icon">🚿</span>
+      <p class="equip-title">Salles de bain</p>
+      <p class="equip-desc">Salles d'eau architecturales, douches à l'italienne, linge de bain hôtelier fourni, produits de soin sélectionnés</p>
+    </div>
+    <div class="equip-card reveal reveal-delay-1">
+      <span class="equip-icon">🚗</span>
+      <p class="equip-title">Accès & sécurité</p>
+      <p class="equip-desc">Portail motorisé, parking privé clos pour 2 véhicules, propriété entièrement sécurisée</p>
+    </div>
+    <div class="equip-card reveal reveal-delay-2">
+      <span class="equip-icon">🌊</span>
+      <p class="equip-title">Bord de mer</p>
+      <p class="equip-desc">Plage du Sillon à moins de 100 m à pied, port authentique à 5 min, vélos à disposition — l'île dans toute son intimité</p>
+    </div>
+    <div class="equip-card reveal reveal-delay-3">
+      <span class="equip-icon">✨</span>
+      <p class="equip-title">Services exclusifs</p>
+      <p class="equip-desc">Ménage en fin de séjour, linge de maison hôtelier, accueil personnalisé sur site, conciergerie sur demande</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="experiences" id="experiences" style="padding-bottom:0;">
+  <div class="section-label reveal">L'île & ses environs</div>
+  <h2 class="reveal">Île-Tudy, une presqu'île <em style="font-style:italic;color:var(--or)">préservée</em></h2>
+  <div class="exp-grid">
+    <div class="exp-card reveal">
+      <div class="exp-num">01</div>
+      <p class="exp-title">Le rivage, à cent mètres</p>
+      <p class="exp-desc">La plage du Sillon s'étire à moins de cent mètres de la villa, bordée par l'estuaire de l'Odet et les eaux translucides de la baie. Baignade, pêche à pied, lever de soleil sur l'Atlantique — le privilège absolu du bord de mer.</p>
+    </div>
+    <div class="exp-card reveal reveal-delay-1">
+      <div class="exp-num">02</div>
+      <p class="exp-title">Art de vivre breton</p>
+      <p class="exp-desc">Homard bleu, huîtres de Belon, poissons débarqués chaque matin au port d'Île-Tudy, crêperies d'exception du Pays Bigouden — la gastronomie bretonne dans ce qu'elle a de plus authentique, à quelques pas.</p>
+    </div>
+    <div class="exp-card reveal reveal-delay-2">
+      <div class="exp-num">03</div>
+      <p class="exp-title">Nature & grands espaces</p>
+      <p class="exp-desc">Sentiers du GR34 longeant les falaises, forêts de pins centenaires, kayak sur l'Odet, voies cyclables à perte de vue — la Bretagne sauvage et préservée, en toutes saisons, sans jamais quitter l'île.</p>
+    </div>
+  </div>
+
+  <!-- Photo band de l'environnement -->
+  <div class="env-band reveal">
+    <div class="env-item">
+      <img loading="lazy" src="env-plage-sillon.jpeg" alt="Plage du Sillon, Île-Tudy">
+      <div class="env-caption">
+        <span class="env-num">—</span>
+        <p>Plage du Sillon</p>
+        <small>à 100 m de la villa</small>
+      </div>
+    </div>
+    <div class="env-item">
+      <img loading="lazy" src="env-phare-odet.jpeg" alt="Phare de l'Odet">
+      <div class="env-caption">
+        <span class="env-num">—</span>
+        <p>Phare de l'Odet</p>
+        <small>L'estuaire mythique</small>
+      </div>
+    </div>
+    <div class="env-item">
+      <img loading="lazy" src="env-surf-vague1.jpeg" alt="Surf Île-Tudy">
+      <div class="env-caption">
+        <span class="env-num">—</span>
+        <p>Surf & grands fonds</p>
+        <small>La Bretagne sauvage</small>
+      </div>
+    </div>
+    <div class="env-item">
+      <img loading="lazy" src="env-surf-vague2.jpeg" alt="Vagues Bretagne">
+      <div class="env-caption">
+        <span class="env-num">—</span>
+        <p>L'Atlantique déchaîné</p>
+        <small>En toutes saisons</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALISATION -->
+<section class="localisation" id="localisation" style="padding:0;">
+  <div class="loc-content reveal">
+    <div class="section-label">Localisation</div>
+    <h2>Au bout<br>de <em>la presqu'île</em></h2>
+    <p>Île-Tudy est une presqu'île rare, presque insulaire, où la mer est omniprésente. Ty Du y occupe une position d'exception : à moins de cent mètres de la plage du Sillon, dans un environnement préservé, loin de toute agitation.</p>
+    <ul class="loc-distances">
+      <li><span>🏖 Plage du Sillon</span><span>&lt; 100 m</span></li>
+      <li><span>⚓ Port d'Île-Tudy</span><span>5 min à pied</span></li>
+      <li><span>🛒 Pont-l'Abbé</span><span>15 min</span></li>
+      <li><span>🏙 Quimper</span><span>30 min</span></li>
+      <li><span>✈️ Aéroport Brest</span><span>1h30</span></li>
+      <li><span>✈️ Aéroport Nantes</span><span>2h30</span></li>
+    </ul>
+  </div>
+  <div class="loc-map">
+    <div class="map-label">
+      <span class="map-pin">📍</span>
+      <p>Ty Du</p>
+      <small>Île-Tudy · Finistère</small>
+    </div>
+  </div>
+</section>
+
+
+<!-- AVIS -->
+<section class="avis" id="avis">
+  <div class="avis-header reveal">
+    <div>
+      <div class="section-label">Avis voyageurs</div>
+      <h2>Ce que disent<br>nos <em style="font-style:italic;color:var(--or)">hôtes</em></h2>
+    </div>
+    <div class="avis-score-global">
+      <span class="big-score">10</span>
+      <span class="score-label">Score moyen · 9 avis</span>
+      <div class="booking-badge">
+        <div class="booking-dot"></div>
+        <span class="booking-name">Booking.com · Exceptionnel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scores par catégorie -->
+  <div class="categories-bar reveal">
+    <div class="cat-item">
+      <span class="cat-score">10</span>
+      <span class="cat-label">Personnel</span>
+    </div>
+    <div class="cat-item">
+      <span class="cat-score">10</span>
+      <span class="cat-label">Propreté</span>
+    </div>
+    <div class="cat-item">
+      <span class="cat-score">10</span>
+      <span class="cat-label">Situation</span>
+    </div>
+    <div class="cat-item">
+      <span class="cat-score">10</span>
+      <span class="cat-label">Équipements</span>
+    </div>
+    <div class="cat-item">
+      <span class="cat-score">10</span>
+      <span class="cat-label">Confort</span>
+    </div>
+    <div class="cat-item">
+      <span class="cat-score">10</span>
+      <span class="cat-label">Qualité/prix</span>
+    </div>
+  </div>
+
+  <!-- Carousel d'avis -->
+  <div class="avis-carousel reveal">
+    <div class="avis-track" id="avisTrack">
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">10</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Au top cette maison avec un accueil très sympa, prend le temps de vous accompagner. Le cadre de la maison agréable ainsi que l'emplacement.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">Anthony</p>
+            <p class="avis-pays">🇫🇷 France</p>
+          </div>
+          <p class="avis-date">Avril 2026</p>
+        </div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">10</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Parfait. Logement proche de la plage et du port. Literie très confortable. Très bien équipé. Un accueil de qualité. Du très haute gamme. Nous reviendrons avec plaisir.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">Anne Laure</p>
+            <p class="avis-pays">🇫🇷 France</p>
+          </div>
+          <p class="avis-date">Août 2025</p>
+        </div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">10</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Séjour inoubliable. Nous avons apprécié le logement, le professionnalisme, les attentions du propriétaire. RIEN NE MANQUE, ÉQUIPEMENTS HAUTE GAMME. Je comprends pourquoi la note 10/10. Notre court séjour a été XXXL.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">Liliane</p>
+            <p class="avis-pays">🇫🇷 France</p>
+          </div>
+          <p class="avis-date">Octobre 2025</p>
+        </div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">10</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Belle escale à Île-Tudy. Un séjour agréable dans une maison confortable tout près de la plage. Un hôte disponible, très accueillant et très professionnel.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">BE64</p>
+            <p class="avis-pays">🇫🇷 France</p>
+          </div>
+          <p class="avis-date">Décembre 2025</p>
+        </div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">10</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Propre, bien équipé et idéalement situé. Une adresse d'exception sur la presqu'île d'Île-Tudy.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">Anne</p>
+            <p class="avis-pays">🇳🇴 Norvège</p>
+          </div>
+          <p class="avis-date">Septembre 2025</p>
+        </div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">9</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Tout. Un séjour parfait à tous les égards — confort, situation, équipements. Une maison qui tient toutes ses promesses.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">Eric</p>
+            <p class="avis-pays">🇯🇵 Japon</p>
+          </div>
+          <p class="avis-date">Décembre 2025</p>
+        </div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-note">
+          <span class="note-num">10</span>
+          <div class="etoiles">
+            <div class="etoile"></div><div class="etoile"></div><div class="etoile"></div>
+            <div class="etoile"></div><div class="etoile"></div>
+          </div>
+        </div>
+        <p class="avis-texte">Une villa d'exception, un emplacement privilégié, un accueil irréprochable. 10/10 mérité sur tous les points.</p>
+        <div class="avis-auteur">
+          <div>
+            <p class="avis-nom">Simon</p>
+            <p class="avis-pays">🇫🇷 France</p>
+          </div>
+          <p class="avis-date">Avril 2026</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="avis-nav">
+    <button class="avis-btn" onclick="avisNav(-1)">&#8592;</button>
+    <div class="avis-dots" id="avisDots">
+      <div class="avis-dot active" onclick="avisGo(0)"></div>
+      <div class="avis-dot" onclick="avisGo(1)"></div>
+      <div class="avis-dot" onclick="avisGo(2)"></div>
+      <div class="avis-dot" onclick="avisGo(3)"></div>
+      <div class="avis-dot" onclick="avisGo(4)"></div>
+    </div>
+    <button class="avis-btn" onclick="avisNav(1)">&#8594;</button>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation" id="reservation">
+  <div class="section-label reveal" style="justify-content:center;">Disponibilités</div>
+  <h2 class="reveal">Réservez votre <em>séjour</em></h2>
+  <p class="reveal">Ty Du accueille un nombre limité de séjours par saison. Contactez-nous pour vérifier les disponibilités et composer votre séjour sur-mesure.</p>
+  <div class="resa-box reveal">
+    <div class="resa-grid">
+      <div class="resa-field">
+        <label>Arrivée</label>
+        <input type="date">
+      </div>
+      <div class="resa-field">
+        <label>Départ</label>
+        <input type="date">
+      </div>
+      <div class="resa-field">
+        <label>Voyageurs</label>
+        <select>
+          <option>2 personnes</option>
+          <option>4 personnes</option>
+          <option>6 personnes</option>
+          
+        </select>
+      </div>
+      <button class="resa-btn">Vérifier</button>
+    </div>
+    <p class="resa-note">Séjour minimum 4 nuits · <a href="mailto:contact@tydu.fr">contact@tydu.fr</a> · <a href="tel:+33661821775">06 61 82 17 75</a></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-text reveal">
+    <div class="section-label">Contact</div>
+    <h2>Organisons ensemble<br>votre <em>séjour</em></h2>
+    <p>Chaque séjour à Ty Du est unique. Nous sommes à votre disposition pour répondre à vos questions, préparer votre arrivée et vous proposer, sur demande, des services personnalisés — transferts, panier gourmand, activités nautiques.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="ci-icon">✉</div>
+        <span>contact@tydu.fr</span>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">☎</div>
+        <span>06 61 82 17 75</span>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <span>3 Bis rue des Pins · Île-Tudy, 29980 · Finistère</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form reveal reveal-delay-2">
+    <div class="form-field">
+      <label>Nom & Prénom</label>
+      <input type="text" placeholder="Marie Dupont">
+    </div>
+    <div class="form-field">
+      <label>Email</label>
+      <input type="email" placeholder="marie@exemple.fr">
+    </div>
+    <div class="form-field">
+      <label>Message</label>
+      <textarea rows="4" placeholder="Votre message..."></textarea>
+    </div>
+    <button class="form-submit">Envoyer le message</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">TY <span>DU</span></div>
+      <p class="footer-tagline">Villa d'exception · Presqu'île d'Île-Tudy</p>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#maison">La Villa</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#equipements">Équipements</a></li>
+      <li><a href="#experiences">Expériences</a></li>
+      <li><a href="#chambres">Chambres</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Ty Du — Tous droits réservés · Mentions légales</p>
+    <div class="footer-socials">
+      <a href="#">Instagram</a>
+      <a href="#">Airbnb</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" onclick="closeLb()">✕</div>
+  <button class="lb-arrow lb-prev" onclick="lbNav(-1)">&#8592;</button>
+  <button class="lb-arrow lb-next" onclick="lbNav(1)">&#8594;</button>
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt="">
+  </div>
+  <div class="lb-counter" id="lbCounter">1 / 19</div>
+</div>
+
+<script>
+  // NAV scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // HERO SLIDESHOW
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const indicators = document.querySelectorAll('.indicator');
+
+  function goSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => {
+    goSlide((currentSlide + 1) % slides.length);
+  }, 5000);
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // GALERIE TABS
+  function filterGal(cat, btn) {
+    document.querySelectorAll('.gtab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gal-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // LIGHTBOX
+  const lbImgs = [
+    'ext-terrasse-principale.jpeg','ext-terrasse-angle.jpeg','ext-patio-chaises.jpeg',
+    'ext-terrasse-soir.jpeg','ext-terrasse-large.jpeg','ext-jardin-vue.jpeg',
+    'ext-jardin-pelouse.jpeg','ext-vue-ensemble.jpeg','ext-module-noir.jpeg',
+    'ext-facade-rue.jpeg','int-sejour-cheminee.jpeg','int-sejour-diner.jpeg',
+    'int-salon-canapes.jpeg','int-sejour-large.jpeg','int-sejour-open.jpeg',
+    'int-cuisine-full.jpeg','int-cuisine-miele.jpeg','int-cuisine-island.jpeg',
+    'int-couloir.jpeg',
+    'env-plage-sillon.jpeg','env-phare-odet.jpeg',
+    'env-surf-vague1.jpeg','env-surf-vague2.jpeg'
+  ];
+  let lbCurrent = 0;
+
+  function openLb(idx) {
+    lbCurrent = idx;
+    document.getElementById('lbImg').src = lbImgs[idx];
+    document.getElementById('lbCounter').textContent = (idx+1) + ' / ' + lbImgs.length;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function lbNav(dir) {
+    lbCurrent = (lbCurrent + dir + lbImgs.length) % lbImgs.length;
+    const img = document.getElementById('lbImg');
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = lbImgs[lbCurrent];
+      img.style.opacity = 1;
+    }, 150);
+    document.getElementById('lbCounter').textContent = (lbCurrent+1) + ' / ' + lbImgs.length;
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLb();
+  });
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft') lbNav(-1);
+    if (e.key === 'Escape') closeLb();
+  });
+
+  // AVIS CAROUSEL
+  let avisIdx = 0;
+  const avisTrack = document.getElementById('avisTrack');
+  const avisDots = document.querySelectorAll('.avis-dot');
+
+  function getVisibleCards() {
+    return window.innerWidth <= 900 ? 1 : 3;
+  }
+
+  function avisGo(idx) {
+    const cards = document.querySelectorAll('.avis-card');
+    const visible = getVisibleCards();
+    const maxIdx = cards.length - visible;
+    avisIdx = Math.max(0, Math.min(idx, maxIdx));
+    const cardW = cards[0].offsetWidth + 24;
+    avisTrack.style.transform = `translateX(-${avisIdx * cardW}px)`;
+    avisDots.forEach((d,i) => d.classList.toggle('active', i === avisIdx));
+  }
+
+  function avisNav(dir) {
+    avisGo(avisIdx + dir);
+  }
+
+  // Auto-advance every 6s
+  setInterval(() => {
+    const cards = document.querySelectorAll('.avis-card');
+    const visible = getVisibleCards();
+    const maxIdx = cards.length - visible;
+    avisGo(avisIdx >= maxIdx ? 0 : avisIdx + 1);
+  }, 6000);
+
+</script>
+</body>
+</html>
